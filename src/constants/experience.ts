@@ -8,14 +8,14 @@ interface Experience {
 const experience: Experience[] = [
     {
         id: 1,
-        year: 'Jan 2022 – Dec 2025',
+        year: 'Jan 2022 – Jan 2025',
         position: 'Frontend Developer',
         company: 'Tehmart',
         text: 'Developed responsive and accessible frontend pages for international clients. Built layouts based on design specifications, implemented animations with GSAP, and improved performance and cross‑browser stability. Worked closely with designers and PMs in a remote workflow.',
     },
     {
         id: 2,
-        year: 'Feb 2024 – Feb 2025',
+        year: 'Feb 2024 – Dec 2024',
         position: 'Frontend Developer',
         company: 'Konstantin Chaykin Watches',
         text: 'Created visually rich, animation‑heavy pages for a luxury watch brand. Implemented complex layouts, GSAP animations, and ensured high‑quality presentation across devices while collaborating closely with designers.',
