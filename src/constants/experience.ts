@@ -8,38 +8,24 @@ interface Experience {
 const experience: Experience[] = [
     {
         id: 1,
-        year: 'Jan 2022 – Jan 2025',
-        position: 'Frontend Developer',
-        company: 'Tehmart',
-        text: 'Developed responsive and accessible frontend pages for international clients. Built layouts based on design specifications, implemented animations with GSAP, and improved performance and cross‑browser stability. Worked closely with designers and PMs in a remote workflow.',
+        year: 'Jan 2022 – Present',
+        position: 'Frontend Engineer (Contract / Part-Time)',
+        company: 'Tehmart & Independent Projects',
+        text: 'Architected high-end UI systems and non-standard responsive layouts for luxury brands and high-traffic platforms (Konstantin Chaykin Watches, Ineichen Auctioneers). Engineered complex visual animations and micro-interactions using React, GSAP, and Three.js, maintaining 60 FPS performance and sub-second load times. Built dynamic web applications from scratch leveraging React, Next.js (App Router), and TypeScript with scalable component architectures and modular SCSS/Tailwind styling. Implemented fullstack features integrating Supabase and runtime schema validation with Zod.',
     },
     {
         id: 2,
-        year: 'Feb 2024 – Dec 2024',
-        position: 'Frontend Developer',
-        company: 'Konstantin Chaykin Watches',
-        text: 'Created visually rich, animation‑heavy pages for a luxury watch brand. Implemented complex layouts, GSAP animations, and ensured high‑quality presentation across devices while collaborating closely with designers.',
-    },
-    {
-        id: 3,
-        year: 'Apr 2022 – Apr 2023',
-        position: 'Frontend Developer',
-        company: 'Ineichen Auctioneers',
-        text: 'Developed and maintained complex frontend pages and reusable UI components for a high‑traffic auction platform. Improved performance, implemented responsive layouts, and collaborated with backend developers on new features.',
-    },
-    {
-        id: 4,
         year: 'Feb 2019 – Jan 2025',
         position: 'Frontend Developer',
         company: 'stmaria.cz',
-        text: 'Maintained and improved the frontend of an e‑commerce platform. Delivered new UI features, optimized performance and responsiveness, applied SEO best practices, and collaborated with backend developers on PHP/SQL integrations.',
+        text: 'Engineered a comprehensive frontend overhaul for an active e-commerce platform (OpenCart/PHP), modernizing the responsive user interface. Drove direct business and traffic growth, successfully scaling simultaneous active users from ~30-40 to 400-500 and increasing daily orders. Optimized mobile performance, integrated robust marketing and analytics pipelines (Google, Seznam, Heureka), and refactored legacy UI codebase to improve page load speeds and technical SEO compliance.',
     },
     {
-        id: 5,
+        id: 3,
         year: '2013 – 2019',
         position: 'Frontend Developer',
         company: 'Helpmed / Call2Doc',
-        text: 'Developed responsive interfaces for telemedicine platforms using modern UI frameworks. Built hybrid mobile app templates with Ionic, integrated frontend with backend systems, and collaborated with designers and product teams in a startup environment.',
+        text: 'Engineered hybrid mobile application interfaces and responsive web views leveraging Angular and Ionic Framework. Architected real-time dynamic UI components and client-side data flows using Meteor.js and JavaScript (ES6+), handling live data synchronization for telemedicine services. Developed scalable templates using Twig and XSLT, translating complex XML/REST API structures into maintainable web layouts.',
     },
 ];
 

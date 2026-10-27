@@ -37,22 +37,26 @@ const Home = () => {
                 <div className="home-text mb-6">
                     I’m a{' '}
                     <b className="text-teal-500">
-                        Frontend Developer with 10 years of experience
+                        Frontend Engineer with 10+ years of experience
                     </b>
-                    , passionate about creating visually stunning and
-                    interactive user interfaces. Over the past decade, I’ve
-                    contributed to <b className="text-teal-500">30+ projects</b>{' '}
-                    — from landing pages to full multi‑page applications —
-                    building clean layouts, crafting polished UI components, and
-                    implementing smooth animations that elevate the user
-                    experience. In recent years, I’ve shifted my focus to modern
-                    frontend development with React, Next.js and TypeScript. I
-                    work with state management tools like Zustand and MobX,
+                    , architecting high-performance web applications and
+                    design-intensive UI systems from scratch[cite: 1]. Over the
+                    past decade, I’ve contributed to{' '}
+                    <b className="text-teal-500">30+ projects</b> — from landing
+                    pages to full multi‑page applications — building clean
+                    layouts, crafting polished UI components, and implementing
+                    smooth animations that elevate the user experience. In
+                    recent years, I’ve specialized in modern frontend
+                    development with React, Next.js (App Router), and
+                    TypeScript[cite: 1]. I work with state management tools,
                     build fast and scalable interfaces using SSR/ISR, integrate
-                    APIs, implement authentication flows with Supabase and
-                    Appwrite, and style applications with Tailwind. I enjoy
-                    combining strong UI engineering with modern architecture to
-                    create interfaces that feel fast, intuitive and refined.
+                    APIs, implement fullstack features and end-to-end type
+                    safety with Supabase (SQL migrations, CLI type generation)
+                    and runtime schema validation with Zod[cite: 1], and style
+                    applications with Tailwind and modular SCSS[cite: 1]. I
+                    enjoy combining strong UI engineering with modern
+                    architecture to create interfaces that feel fast, intuitive
+                    and refined[cite: 1].
                 </div>
                 <div className="home-skills">
                     <h3 className="mb-4">Some of my tech skills:</h3>

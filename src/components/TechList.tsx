@@ -20,6 +20,9 @@ import {
     SiSupabase,
     SiAppwrite,
     SiNextdotjs,
+    SiReactquery,
+    SiZod,
+    SiAstro,
 } from 'react-icons/si';
 
 type TechNames =
@@ -43,7 +46,10 @@ type TechNames =
     | 'supabase'
     | 'appwrite'
     | 'nextjs'
-    | 'zustand';
+    | 'zustand'
+    | 'reactquery'
+    | 'zod'
+    | 'astro';
 interface Technology {
     id: TechNames;
     name: string;
@@ -69,6 +75,12 @@ const techArr: Technology[] = [
         name: 'Next.js',
         icon: <SiNextdotjs />,
         color: 'white',
+    },
+    {
+        id: 'astro',
+        name: 'Astro',
+        icon: <SiAstro />,
+        color: '#fff',
     },
     { id: 'mobx', name: 'MobX', icon: <SiMobx />, color: '#FF9955' },
     {
@@ -102,6 +114,18 @@ const techArr: Technology[] = [
         name: 'Appwrite',
         icon: <SiAppwrite />,
         color: '#FF5F5F',
+    },
+    {
+        id: 'reactquery',
+        name: 'React Query',
+        icon: <SiReactquery />,
+        color: '#FF4154',
+    },
+    {
+        id: 'zod',
+        name: 'Zod',
+        icon: <SiZod />,
+        color: '#408CFF',
     },
 ];
 
