@@ -1,0 +1,233 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-ink: #000000;
+    --color-ink-2: #0d0d0d;
+    --color-line: #262626;
+    --color-paper: #f2f2f2;
+    --color-mist: #a3a3a3;
+    --color-accent: #5cc9a7;
+
+    --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+
+    /* Type scale, ratio 1.25 from 17px */
+    --text-small: 0.875rem;
+    --text-body: 1.0625rem;
+    --text-lead: 1.3125rem;
+    --text-h4: 1.6875rem;
+    --text-h3: 2.0625rem;
+    --text-h2: 2.625rem;
+}
+
+@layer base {
+    :root {
+        color-scheme: dark;
+        --gutter: 1rem;
+    }
+    @media (min-width: 48rem) {
+        :root {
+            --gutter: 2.5rem;
+        }
+    }
+    @media (min-width: 90rem) {
+        :root {
+            --gutter: 4rem;
+        }
+    }
+
+    html {
+        background: var(--color-ink);
+        color: var(--color-paper);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        /* Locking scroll for the menu must not shift the layout. */
+        scrollbar-gutter: stable;
+    }
+
+    body {
+        font-family: var(--font-sans);
+        font-size: var(--text-body);
+        line-height: 1.6;
+        font-stretch: 100%;
+        min-height: 100dvh;
+        background: var(--color-ink);
+    }
+
+    ::selection {
+        background: var(--color-accent);
+        color: var(--color-ink-2);
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 3px;
+        border-radius: 2px;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    input:-webkit-autofill,
+    textarea:-webkit-autofill,
+    select:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px var(--color-ink-2) inset !important;
+        -webkit-text-fill-color: var(--color-paper);
+    }
+}
+
+@layer components {
+    /* Full-width layout: only side gutters, no centred container. */
+    .wrap {
+        width: 100%;
+        padding-inline: var(--gutter);
+    }
+
+    /* Expanded display face: the type treatment of the whole site. */
+    .display {
+        font-stretch: 125%;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        line-height: 1;
+        text-wrap: balance;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 1.2rem + 3vw, var(--text-h2));
+    }
+
+    /* Content to the right of the spine line. */
+    .spine-indent {
+        padding-left: 2.25rem;
+    }
+    @media (min-width: 48rem) {
+        .spine-indent {
+            padding-left: clamp(5rem, 16%, 14rem);
+        }
+    }
+
+    .prose-measure {
+        max-width: 38rem;
+    }
+
+    .num {
+        font-variant-numeric: tabular-nums lining-nums;
+    }
+
+    /* Underline that draws in from the left: links in running text. */
+    .link {
+        background-image: linear-gradient(currentColor, currentColor);
+        background-size: 100% 1px;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        transition: background-size 0.35s ease, color 0.2s ease;
+    }
+    .link:hover {
+        color: var(--color-accent);
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        min-height: 3rem;
+        padding: 0.75rem 1.5rem;
+        border: 1px solid var(--color-accent);
+        border-radius: 999px;
+        font-weight: 500;
+        font-stretch: 112%;
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease;
+    }
+    .btn-solid {
+        background: var(--color-accent);
+        color: var(--color-ink-2);
+    }
+    .btn-solid:hover {
+        background: var(--color-paper);
+        border-color: var(--color-paper);
+    }
+    .btn-ghost:hover {
+        background: color-mix(in oklab, var(--color-accent) 14%, transparent);
+    }
+
+    /* Hairline that is drawn by GSAP (scaleX) on scroll. */
+    .rule {
+        height: 1px;
+        background: var(--color-line);
+        transform-origin: 0 50%;
+    }
+}
+
+/* ---------- Hero: hidden until its load animation, visible without JS ---------- */
+.js .hero-line,
+.js .hero-reveal {
+    opacity: 0;
+}
+
+/* Soft green light behind the hero, CTA and menu. */
+.glow {
+    position: absolute;
+    border-radius: 999px;
+    background: radial-gradient(closest-side, color-mix(in oklab, var(--color-accent) 42%, transparent), transparent);
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+/* Giant, barely visible word behind the hero. */
+.ghost-word {
+    font-stretch: 125%;
+    font-weight: 700;
+    line-height: 0.8;
+    letter-spacing: -0.04em;
+    color: rgb(255 255 255 / 0.035);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+    overflow: clip;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js .hero-line,
+    .js .hero-reveal {
+        opacity: 1;
+    }
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* /work card descriptions from the CMS */
+.work-desc p + p {
+    margin-top: 0.75rem;
+}
+
+/* Spine dots: hollow accent until the line reaches them. */
+.spine-dot {
+    fill: var(--color-ink);
+    stroke: var(--color-accent);
+    stroke-width: 1.5;
+    transition: fill 0.4s ease;
+}
+.spine-dot.is-on {
+    fill: var(--color-accent);
+}

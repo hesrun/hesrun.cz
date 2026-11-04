@@ -1,0 +1,172 @@
+{
+    "meta": {
+        "homeTitle": "Vladyslav Otroshchenko — Frontend Engineer (React, Next.js, GSAP)",
+        "homeDescription": "Frontend engineer with 10+ years of experience. Websites, React and Next.js applications and motion-rich interfaces for luxury brands, auction houses and growing products.",
+        "workTitle": "Work — Vladyslav Otroshchenko",
+        "workDescription": "Selected projects: websites for independent watchmakers, Ineichen Auctioneers, Artle, e-commerce and React applications.",
+        "contactTitle": "Start a project — Vladyslav Otroshchenko",
+        "contactDescription": "Tell me about your website or web application. I reply within two working days.",
+        "jobTitle": "Frontend Engineer"
+    },
+    "nav": {
+        "label": "Main navigation",
+        "home": "Home",
+        "services": "Services",
+        "work": "Work",
+        "contact": "Contact",
+        "skip": "Skip to content",
+        "switchTo": "Česky",
+        "switchLabel": "Přepnout do češtiny",
+        "skills": "Skills",
+        "open": "Open menu",
+        "close": "Close menu"
+    },
+    "hero": {
+        "lead": "I build fast, search-friendly websites and React applications, with motion that makes people stay.",
+        "ctaPrimary": "Start a project",
+        "ctaSecondary": "See the work",
+        "greeting": "Hi, I’m Vladyslav,",
+        "rolePrefix": "a",
+        "accent": "frontend",
+        "roleSuffix": "engineer"
+    },
+    "experience": {
+        "title": "Experience",
+        "intro": "For over a decade I’ve built web interfaces from scratch, from single landing pages to multi-page applications. Lately the work is React, Next.js and TypeScript with server rendering, typed data from Supabase and Zod, and animation that stays at 60 FPS.",
+        "items": {
+            "tehmart": {
+                "period": "2022 – now",
+                "company": "Tehmart & independent projects",
+                "role": "Frontend engineer, contract",
+                "text": "UI systems and non-standard responsive layouts for luxury brands and high-traffic platforms, including Konstantin Chaykin and Ineichen Auctioneers. Animation and micro-interactions with GSAP and Three.js at 60 FPS. Applications built from zero on React, Next.js (App Router) and TypeScript, with Supabase and Zod for full-stack features."
+            },
+            "stmaria": {
+                "period": "2019 – 2025",
+                "company": "stmaria.cz",
+                "role": "Frontend developer",
+                "text": "Rebuilt the frontend of a live OpenCart store: responsive UI, faster mobile pages, cleaner technical SEO and analytics pipelines for Google, Seznam and Heureka.",
+                "statTo": "400–500",
+                "statLabel": "people on the site at the same time after the rebuild, up from 30–40. Daily orders grew from 5–6 to 160+."
+            },
+            "helpmed": {
+                "period": "2013 – 2019",
+                "company": "Helpmed / Call2Doc",
+                "role": "Frontend developer",
+                "text": "Hybrid mobile interfaces on Angular and Ionic for a telemedicine service, real-time UI on Meteor.js, and Twig/XSLT templates that turned XML and REST data into maintainable pages."
+            }
+        }
+    },
+    "skills": {
+        "title": "Skills and technologies",
+        "intro": "What I work with every day, grouped the way I use it on projects.",
+        "groups": {
+            "core": "Frontend architecture and core",
+            "ui": "UI engineering and styling",
+            "data": "State and data",
+            "backend": "Backend and services",
+            "tooling": "Tooling and quality",
+            "ai": "AI-assisted workflow",
+            "earlier": "Earlier stack"
+        },
+        "notes": {
+            "ai": "I use AI tools daily to scaffold components, refactor, write tests and review code faster. Architecture decisions stay mine, and every line is read before it ships."
+        },
+        "languagesLabel": "Languages",
+        "languages": "Czech, English, Ukrainian, Russian"
+    },
+    "services": {
+        "title": "Development to order",
+        "intro": "I take on a small number of projects at a time, so each one gets my full attention from the first layout to launch. AI tools speed up the routine work; the details are done by hand.",
+        "stackLabel": "Typical stack",
+        "items": {
+            "sites": {
+                "title": "Websites and landing pages",
+                "text": "A fast, search-friendly site built from your design, or with one. Pixel-accurate layouts, content you can edit yourself, and pages that load in under a second.",
+                "stack": "Next.js, Astro, Tailwind, headless CMS"
+            },
+            "apps": {
+                "title": "React web applications",
+                "text": "Dashboards, shops and internal tools with typed data from the database to the button. Authentication, forms, payments and an architecture the next developer can read.",
+                "stack": "React, Next.js, TypeScript, Supabase, Zod"
+            },
+            "motion": {
+                "title": "Animation and interactive",
+                "text": "Scroll stories, product reveals and 3D scenes for brands that want visitors to stay. Motion that stays smooth on a mid-range phone and respects reduced-motion settings.",
+                "stack": "GSAP, Three.js, Lenis, WebGL"
+            },
+            "performance": {
+                "title": "Speed and technical SEO",
+                "text": "An audit of an existing site with a clear list of fixes, then the fixes themselves: Core Web Vitals, image and font loading, structured data and crawlable markup.",
+                "stack": "Lighthouse, Core Web Vitals, Schema.org"
+            }
+        }
+    },
+    "cta": {
+        "title": "Have a project in mind?",
+        "text": "Send a few lines about what you’re building. I reply within two working days.",
+        "button": "Start a project"
+    },
+    "work": {
+        "title": "Work",
+        "intro": "Websites and applications from the last years, mostly for the watch world: independent makers, auction houses and the platforms around them.",
+        "visit": "Visit site",
+        "stack": "Stack",
+        "empty": "Projects are loading from the CMS. Refresh in a minute, or write to me for case studies.",
+        "screenshot": "Screenshot of {title}"
+    },
+    "contact": {
+        "title": "Start a project",
+        "intro": "Tell me what you’re building, when you need it and roughly what you can spend. The more specific, the better my first reply.",
+        "direct": "Or write directly",
+        "location": "Karlovy Vary, Czechia. Remote or hybrid, CET.",
+        "form": {
+            "name": "Your name",
+            "email": "Email",
+            "company": "Company or website",
+            "optional": "optional",
+            "type": "What do you need?",
+            "types": {
+                "sites": "Website or landing page",
+                "apps": "React application",
+                "motion": "Animation or 3D",
+                "performance": "Speed and SEO",
+                "other": "Something else"
+            },
+            "budget": "Budget",
+            "budgets": {
+                "s": "Under €2,000",
+                "m": "€2,000 – €5,000",
+                "l": "€5,000 – €10,000",
+                "xl": "Over €10,000",
+                "unsure": "Not sure yet"
+            },
+            "timeline": "When should it launch?",
+            "timelines": {
+                "asap": "Within a month",
+                "quarter": "In 1–3 months",
+                "later": "Later or flexible"
+            },
+            "message": "About the project",
+            "messageHint": "Goals, links to references, anything that helps.",
+            "submit": "Send request",
+            "sending": "Sending…",
+            "success": "Request sent. I’ll reply within two working days.",
+            "error": "The request didn’t send. Check your connection and try again, or email info@hesrun.cz.",
+            "errors": {
+                "name": "Enter your name.",
+                "email": "Enter an email like name@company.com.",
+                "type": "Choose what you need.",
+                "message": "Write at least 30 characters so I understand the project."
+            }
+        }
+    },
+    "footer": {
+        "rights": "Vladyslav Otroshchenko",
+        "built": "Built with Next.js, GSAP and Three.js."
+    },
+    "notFound": {
+        "title": "This page doesn’t exist",
+        "text": "The link may be old. Go back to the home page or look through the work.",
+        "home": "Home page"
+    }
+}
