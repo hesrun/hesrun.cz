@@ -1,134 +1,57 @@
-import { useRef } from 'react';
-import experience from '../../constants/experience';
-import { gsap } from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Title from '../Title';
+import { getTranslations } from 'next-intl/server';
 
-gsap.registerPlugin(ScrollTrigger);
+const ITEMS = ['tehmart', 'stmaria', 'helpmed'] as const;
 
-const Experience = () => {
-    const container = useRef(null);
-    const lineRef = useRef(null);
-
-    useGSAP(
-        () => {
-            gsap.fromTo(
-                lineRef.current,
-                {
-                    yPercent: -100,
-                },
-                {
-                    yPercent: 0,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: container.current,
-                        start: 'top 75%',
-                        end: 'bottom 75%',
-                        scrub: true,
-                        //markers: true,
-                    },
-                }
-            );
-
-            gsap.utils.toArray<HTMLElement>('.exp-item').forEach((el) => {
-                gsap.from(el.querySelector('.exp-year'), {
-                    opacity: 0,
-                    duration: 0.6,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: el,
-                        start: 'top 70%',
-                        scrub: false,
-                        //markers: true,
-                    },
-                });
-
-                gsap.fromTo(
-                    el.querySelector('.exp-info'),
-                    {
-                        clipPath: 'inset( 0% 0% 100% 0% )',
-                    },
-                    {
-                        clipPath: 'inset(0% 0% 0% 0%)',
-                        duration: 0.6,
-                        ease: 'power2.out',
-                        scrollTrigger: {
-                            trigger: el,
-                            start: 'top 70%',
-                            scrub: false,
-                            //markers: true,
-                        },
-                    }
-                );
-            });
-        },
-        { scope: container }
-    );
+export default async function Experience() {
+    const t = await getTranslations('experience');
 
     return (
-        <>
-            <Title type="h2" className="mb-16">
-                The Road of My Experience
-            </Title>
-            <ul className="relative" ref={container}>
-                {experience.map((item, index) => (
-                    <li
-                        key={item.id}
-                        className={`exp-item grid lg:grid-cols-[1fr_auto_1fr] gap-6 items-start relative group pl-14 lg:pl-0 py-10 lg:py-16`}
+        <section id="experience" aria-labelledby="experience-title" className="scroll-mt-20 py-24 md:py-36">
+            <div className="wrap">
+                <div className="spine-indent">
+                    <h2 id="experience-title" data-spine-node data-fx="title" className="display section-title">
+                        {t('title')}
+                    </h2>
+                    {/* The intro reads as a statement: words light up while it scrolls past. */}
+                    <p
+                        data-fx="words"
+                        className="mt-10 max-w-[22ch] text-[clamp(1.75rem,3.6vw,3.25rem)] font-medium leading-[1.12] tracking-[-0.02em] sm:max-w-[28ch]"
                     >
-                        <div
-                            className={`exp-year flex lg:sticky top-32 ${
-                                index % 2 === 0
-                                    ? 'lg:order-3 lg:justify-start '
-                                    : 'lg:justify-end '
-                            }`}
-                        >
-                            <span
-                                className={`bg-teal-400 px-4 py-2 text-black text-sm uppercase font-bold rounded-2xl`}
-                            >
-                                {item.year}
-                            </span>
-                        </div>
-                        <div className="absolute left-2 top-11 lg:static  w-6 h-6 lg:w-9 lg:h-9 border-7 lg:border-8 border-black outline-2 outline-teal-500 bg-teal-500 rounded-full "></div>
-                        <div
-                            className={`exp-info max-w-lg ${
-                                index % 2 === 0
-                                    ? 'lg:-order-1 lg:text-right lg:ml-auto'
-                                    : ''
-                            }`}
-                        >
-                            <h2
-                                className="text-[var(--beige)] uppercase text-xl mt-1 mb-3 tracking-wider
-"
-                            >
-                                {item.company}
-                            </h2>
-                            <h3 className="mb-2 text-teal-500">
-                                {item.position}
-                            </h3>
-                            <div className="lg:text-lg font-light text-left">
-                                {item.text}
-                            </div>
-                        </div>
-                    </li>
-                ))}
-                <div className="absolute top-0 w-[2px] h-full left-[19px] lg:left-1/2 -z-1 overflow-hidden">
-                    <div
-                        ref={lineRef}
-                        className="w-full h-full bg-gradient-to-b from-teal-900 from-90% to-teal-200 to-100%"
-                    ></div>
-                    <div
-                        className="absolute inset-0 pointer-events-none"
-                        style={{
-                            background:
-                                'linear-gradient(to bottom, rgba(0,0,0,1) 0%, transparent 10%, transparent 90%, rgba(0,0,0,1) 100%)',
-                        }}
-                    />
-                </div>
-            </ul>
-        </>
-    );
-};
+                        {t('intro')}
+                    </p>
 
-export default Experience;
+                    <ol className="mt-24 md:mt-36">
+                        {ITEMS.map((key) => (
+                            <li
+                                key={key}
+                                data-fx="rise"
+                                className="grid gap-x-12 gap-y-3 border-t border-line py-12 md:grid-cols-[11rem_1fr] md:py-16"
+                            >
+                                <p data-spine-node className="num pt-1.5 text-small text-mist">
+                                    {t(`items.${key}.period`)}
+                                </p>
+                                <div>
+                                    <h3 className="text-h3 font-semibold leading-tight [font-stretch:112%]">
+                                        {t(`items.${key}.company`)}
+                                    </h3>
+                                    <p className="mt-1 text-mist">{t(`items.${key}.role`)}</p>
+                                    <p className="prose-measure mt-5">{t(`items.${key}.text`)}</p>
+                                    {key === 'stmaria' && (
+                                        <div className="mt-10 flex flex-col gap-2">
+                                            <p className="display num text-[clamp(3rem,7vw,6rem)] leading-none text-accent">
+                                                <span data-count="400">400</span>–<span data-count="500">500</span>
+                                            </p>
+                                            <p className="max-w-[26rem] text-small leading-snug text-mist">
+                                                {t('items.stmaria.statLabel')}
+                                            </p>
+                                        </div>
+                                    )}
+                                </div>
+                            </li>
+                        ))}
+                    </ol>
+                </div>
+            </div>
+        </section>
+    );
+}

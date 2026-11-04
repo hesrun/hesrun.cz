@@ -1,0 +1,172 @@
+{
+    "meta": {
+        "homeTitle": "Vladyslav Otroshchenko — frontend vývojář (React, Next.js, GSAP)",
+        "homeDescription": "Frontend vývojář s více než 10 lety praxe. Weby, aplikace v Reactu a Next.js a animovaná rozhraní pro luxusní značky, aukční domy a rostoucí produkty.",
+        "workTitle": "Projekty — Vladyslav Otroshchenko",
+        "workDescription": "Vybrané projekty: weby pro nezávislé hodináře, Ineichen Auctioneers, Artle, e-shopy a aplikace v Reactu.",
+        "contactTitle": "Poptat projekt — Vladyslav Otroshchenko",
+        "contactDescription": "Napište mi o svém webu nebo webové aplikaci. Odpovím do dvou pracovních dnů.",
+        "jobTitle": "Frontend vývojář"
+    },
+    "nav": {
+        "label": "Hlavní navigace",
+        "home": "Úvod",
+        "services": "Služby",
+        "work": "Projekty",
+        "contact": "Kontakt",
+        "skip": "Přeskočit na obsah",
+        "switchTo": "English",
+        "switchLabel": "Switch to English",
+        "skills": "Dovednosti",
+        "open": "Otevřít menu",
+        "close": "Zavřít menu"
+    },
+    "hero": {
+        "lead": "Stavím rychlé weby a aplikace v Reactu přátelské k vyhledávačům, s animacemi, u kterých lidé zůstanou.",
+        "ctaPrimary": "Poptat projekt",
+        "ctaSecondary": "Prohlédnout projekty",
+        "greeting": "Ahoj, jsem Vladyslav,",
+        "rolePrefix": "",
+        "accent": "frontend",
+        "roleSuffix": "vývojář"
+    },
+    "experience": {
+        "title": "Praxe",
+        "intro": "Přes deset let stavím webová rozhraní od nuly, od jednoduchých landing pages po vícestránkové aplikace. Dnes hlavně React, Next.js a TypeScript se serverovým renderováním, typovanými daty ze Supabase a Zodu a animacemi, které drží 60 FPS.",
+        "items": {
+            "tehmart": {
+                "period": "2022 – dosud",
+                "company": "Tehmart a vlastní projekty",
+                "role": "Frontend vývojář, externě",
+                "text": "UI systémy a nestandardní responzivní layouty pro luxusní značky a platformy s vysokou návštěvností, mimo jiné Konstantin Chaykin a Ineichen Auctioneers. Animace a mikrointerakce v GSAP a Three.js při 60 FPS. Aplikace od nuly v Reactu, Next.js (App Router) a TypeScriptu, full-stack funkce se Supabase a Zodem."
+            },
+            "stmaria": {
+                "period": "2019 – 2025",
+                "company": "stmaria.cz",
+                "role": "Frontend vývojář",
+                "text": "Přestavba frontendu běžícího e-shopu na OpenCartu: responzivní rozhraní, rychlejší mobilní stránky, čistší technické SEO a měření pro Google, Seznam a Heureku.",
+                "statTo": "400–500",
+                "statLabel": "lidí na webu současně po přestavbě, dříve 30–40. Denní objednávky vzrostly z 5–6 na 160+."
+            },
+            "helpmed": {
+                "period": "2013 – 2019",
+                "company": "Helpmed / Call2Doc",
+                "role": "Frontend vývojář",
+                "text": "Hybridní mobilní rozhraní v Angularu a Ionicu pro telemedicínskou službu, real-time UI v Meteor.js a šablony v Twigu a XSLT, které převáděly XML a REST data na udržovatelné stránky."
+            }
+        }
+    },
+    "skills": {
+        "title": "Dovednosti a technologie",
+        "intro": "S čím pracuji každý den, seřazené tak, jak to používám na projektech.",
+        "groups": {
+            "core": "Frontend architektura a základ",
+            "ui": "UI a styly",
+            "data": "Stav a data",
+            "backend": "Backend a služby",
+            "tooling": "Nástroje a kvalita",
+            "ai": "Práce s AI nástroji",
+            "earlier": "Dřívější technologie"
+        },
+        "notes": {
+            "ai": "AI nástroje používám denně ke generování komponent, refaktoringu, psaní testů a rychlejšímu review. Architektonická rozhodnutí dělám sám a každý řádek před nasazením čtu."
+        },
+        "languagesLabel": "Jazyky",
+        "languages": "čeština, angličtina, ukrajinština, ruština"
+    },
+    "services": {
+        "title": "Vývoj na zakázku",
+        "intro": "Beru jen několik projektů najednou, takže každý má moji plnou pozornost od prvního layoutu po spuštění. AI nástroje zrychlují rutinu, detaily dělám ručně.",
+        "stackLabel": "Obvyklé technologie",
+        "items": {
+            "sites": {
+                "title": "Weby a landing pages",
+                "text": "Rychlý web přátelský k vyhledávačům podle vašeho designu, nebo i s ním. Přesné layouty, obsah, který si upravíte sami, a stránky načtené za méně než sekundu.",
+                "stack": "Next.js, Astro, Tailwind, headless CMS"
+            },
+            "apps": {
+                "title": "Webové aplikace v Reactu",
+                "text": "Dashboardy, e-shopy a interní nástroje s typovanými daty od databáze až po tlačítko. Přihlášení, formuláře, platby a architektura, které další vývojář porozumí.",
+                "stack": "React, Next.js, TypeScript, Supabase, Zod"
+            },
+            "motion": {
+                "title": "Animace a interaktivita",
+                "text": "Scroll příběhy, představení produktů a 3D scény pro značky, u kterých mají návštěvníci zůstat. Animace plynulé i na běžném telefonu a s ohledem na nastavení omezeného pohybu.",
+                "stack": "GSAP, Three.js, Lenis, WebGL"
+            },
+            "performance": {
+                "title": "Rychlost a technické SEO",
+                "text": "Audit stávajícího webu s jasným seznamem oprav a pak samotné opravy: Core Web Vitals, načítání obrázků a fontů, strukturovaná data a čitelný kód pro vyhledávače.",
+                "stack": "Lighthouse, Core Web Vitals, Schema.org"
+            }
+        }
+    },
+    "cta": {
+        "title": "Máte v hlavě projekt?",
+        "text": "Napište pár řádků o tom, co stavíte. Odpovím do dvou pracovních dnů.",
+        "button": "Poptat projekt"
+    },
+    "work": {
+        "title": "Projekty",
+        "intro": "Weby a aplikace z posledních let, hlavně ze světa hodinek: nezávislí hodináři, aukční domy a platformy kolem nich. Popisy projektů jsou v angličtině.",
+        "visit": "Otevřít web",
+        "stack": "Technologie",
+        "empty": "Projekty se načítají z CMS. Obnovte stránku za minutu, nebo mi napište o ukázky.",
+        "screenshot": "Snímek obrazovky webu {title}"
+    },
+    "contact": {
+        "title": "Poptat projekt",
+        "intro": "Napište, co stavíte, kdy to potřebujete a přibližně jaký máte rozpočet. Čím konkrétněji, tím lepší bude moje první odpověď.",
+        "direct": "Nebo napište přímo",
+        "location": "Karlovy Vary, Česko. Na dálku nebo hybridně, SEČ.",
+        "form": {
+            "name": "Vaše jméno",
+            "email": "E-mail",
+            "company": "Firma nebo web",
+            "optional": "nepovinné",
+            "type": "Co potřebujete?",
+            "types": {
+                "sites": "Web nebo landing page",
+                "apps": "Aplikace v Reactu",
+                "motion": "Animace nebo 3D",
+                "performance": "Rychlost a SEO",
+                "other": "Něco jiného"
+            },
+            "budget": "Rozpočet",
+            "budgets": {
+                "s": "Do 50 000 Kč",
+                "m": "50 000 – 125 000 Kč",
+                "l": "125 000 – 250 000 Kč",
+                "xl": "Nad 250 000 Kč",
+                "unsure": "Zatím nevím"
+            },
+            "timeline": "Kdy má projekt startovat?",
+            "timelines": {
+                "asap": "Do měsíce",
+                "quarter": "Za 1–3 měsíce",
+                "later": "Později nebo flexibilně"
+            },
+            "message": "O projektu",
+            "messageHint": "Cíle, odkazy na inspiraci, cokoli, co pomůže.",
+            "submit": "Odeslat poptávku",
+            "sending": "Odesílám…",
+            "success": "Poptávka odeslána. Odpovím do dvou pracovních dnů.",
+            "error": "Poptávku se nepodařilo odeslat. Zkontrolujte připojení a zkuste to znovu, nebo napište na info@hesrun.cz.",
+            "errors": {
+                "name": "Vyplňte své jméno.",
+                "email": "Zadejte e-mail ve tvaru jmeno@firma.cz.",
+                "type": "Vyberte, co potřebujete.",
+                "message": "Napište alespoň 30 znaků, ať projektu rozumím."
+            }
+        }
+    },
+    "footer": {
+        "rights": "Vladyslav Otroshchenko",
+        "built": "Postaveno na Next.js, GSAP a Three.js."
+    },
+    "notFound": {
+        "title": "Tahle stránka neexistuje",
+        "text": "Odkaz je možná starý. Vraťte se na úvod nebo si prohlédněte projekty.",
+        "home": "Na úvod"
+    }
+}

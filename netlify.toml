@@ -1,0 +1,11 @@
+# Next.js on Netlify. The plugin is listed explicitly because this site was
+# set up as a Vite project before, and framework auto-detection can miss it.
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
