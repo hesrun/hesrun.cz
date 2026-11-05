@@ -9,13 +9,17 @@ import { jumpToHashOrTop, setLenis } from '@/lib/scroll';
 
 gsap.registerPlugin(ScrollTrigger);
 
-/** Lenis smooth scrolling driven by the GSAP ticker so ScrollTrigger stays in sync. */
+/**
+ * Lenis smooth scrolling driven by the GSAP ticker so ScrollTrigger stays in sync.
+ * Desktop only: touch scrolling is already smooth and native is cheaper on phones.
+ */
 export default function SmoothScroll() {
     const lenisRef = useRef<Lenis | null>(null);
     const pathname = usePathname();
 
     useEffect(() => {
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (window.matchMedia('(max-width: 767px), (pointer: coarse)').matches) return;
 
         const lenis = new Lenis({ autoRaf: false, anchors: { offset: -72 }, lerp: 0.11 });
         lenisRef.current = lenis;

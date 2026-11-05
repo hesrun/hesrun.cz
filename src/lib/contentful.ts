@@ -1,5 +1,4 @@
 import type { Document } from '@contentful/rich-text-types';
-import { isTechId, type TechId } from '@/data/tech';
 
 export type Work = {
     id: string;
@@ -7,7 +6,6 @@ export type Work = {
     title: string;
     url: string;
     order: number;
-    tech: TechId[];
     description: Document | null;
     /** First paragraph as plain text, for meta and the home teaser. */
     summary: string;
@@ -21,7 +19,6 @@ type Entry = {
         title?: string;
         url?: string;
         order?: number;
-        tech?: string[];
         description?: Document;
         image?: Link;
     };
@@ -91,7 +88,6 @@ export async function getWorks(): Promise<Work[]> {
                 title,
                 url: f.url ?? '',
                 order: f.order ?? index,
-                tech: (f.tech ?? []).filter(isTechId),
                 description: f.description ?? null,
                 summary: plainText(f.description),
                 image: file

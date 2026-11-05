@@ -1,11 +1,11 @@
 {
     "meta": {
-        "homeTitle": "Vladyslav Otroshchenko — Frontend Engineer (React, Next.js, GSAP)",
-        "homeDescription": "Frontend engineer with 10+ years of experience. Websites, React and Next.js applications and motion-rich interfaces for luxury brands, auction houses and growing products.",
+        "homeTitle": "Vladyslav Otroshchenko — Frontend Engineer for fast websites and React apps",
+        "homeDescription": "Websites, React / Next.js applications and AI integrations that load fast, rank in search and turn visitors into clients. 10+ years of experience with luxury brands, auction houses and e-commerce.",
         "workTitle": "Work — Vladyslav Otroshchenko",
-        "workDescription": "Selected projects: websites for independent watchmakers, Ineichen Auctioneers, Artle, e-commerce and React applications.",
-        "contactTitle": "Start a project — Vladyslav Otroshchenko",
-        "contactDescription": "Tell me about your website or web application. I reply within two working days.",
+        "workDescription": "Selected projects for independent watchmakers, Ineichen Auctioneers, Artle and e-commerce: fast, polished websites and React applications.",
+        "contactTitle": "Discuss your project — Vladyslav Otroshchenko",
+        "contactDescription": "Tell me about your website or web application. You get a concrete answer with next steps within two working days.",
         "jobTitle": "Frontend Engineer"
     },
     "nav": {
@@ -22,9 +22,9 @@
         "close": "Close menu"
     },
     "hero": {
-        "lead": "I build fast, search-friendly websites and React applications, with motion that makes people stay.",
-        "ctaPrimary": "Start a project",
-        "ctaSecondary": "See the work",
+        "lead": "Websites and React apps that load in a blink, rank in search and turn visitors into clients. From the first layout to launch, without agency overhead.",
+        "ctaPrimary": "Discuss your project",
+        "ctaSecondary": "See the results",
         "greeting": "Hi, I’m Vladyslav,",
         "rolePrefix": "a",
         "accent": "frontend",
@@ -32,91 +32,151 @@
     },
     "experience": {
         "title": "Experience",
-        "intro": "For over a decade I’ve built web interfaces from scratch, from single landing pages to multi-page applications. Lately the work is React, Next.js and TypeScript with server rendering, typed data from Supabase and Zod, and animation that stays at 60 FPS.",
+        "intro": "10+ years of building interfaces from scratch, from landing pages to complex applications. Today: React, Next.js and TypeScript with server rendering, reliable typed data and animation that stays smooth at 60 FPS, even on a mid-range phone.",
         "items": {
             "tehmart": {
                 "period": "2022 – now",
                 "company": "Tehmart & independent projects",
                 "role": "Frontend engineer, contract",
-                "text": "UI systems and non-standard responsive layouts for luxury brands and high-traffic platforms, including Konstantin Chaykin and Ineichen Auctioneers. Animation and micro-interactions with GSAP and Three.js at 60 FPS. Applications built from zero on React, Next.js (App Router) and TypeScript, with Supabase and Zod for full-stack features."
+                "text": "Interfaces for luxury brands and high-traffic platforms, including Konstantin Chaykin and Ineichen Auctioneers. Bespoke responsive layouts, GSAP and Three.js animation that never stutters, and React / Next.js applications built from zero with Supabase and Zod behind them.",
+                "stats": [
+                    {
+                        "value": 30,
+                        "suffix": "+",
+                        "label": "projects shipped"
+                    },
+                    {
+                        "value": 300,
+                        "suffix": "+",
+                        "label": "pages designed into code"
+                    },
+                    {
+                        "value": 60,
+                        "suffix": " FPS",
+                        "label": "target for every animation, on desktop and phone"
+                    }
+                ]
             },
             "stmaria": {
                 "period": "2019 – 2025",
                 "company": "stmaria.cz",
                 "role": "Frontend developer",
-                "text": "Rebuilt the frontend of a live OpenCart store: responsive UI, faster mobile pages, cleaner technical SEO and analytics pipelines for Google, Seznam and Heureka.",
-                "statTo": "400–500",
-                "statLabel": "people on the site at the same time after the rebuild, up from 30–40. Daily orders grew from 5–6 to 160+."
+                "text": "Rebuilt the frontend of a live pharmacy e-shop on OpenCart without stopping sales: a mobile-first interface, faster pages, a cleaner path to checkout, technical SEO and feeds and tracking for Google, Seznam, Heureka and Zboží.cz.",
+                "stats": [
+                    {
+                        "value": 500,
+                        "label": "people on the site at the same time",
+                        "was": "was 20"
+                    },
+                    {
+                        "value": 160,
+                        "suffix": "+",
+                        "label": "orders a day",
+                        "was": "was 10"
+                    },
+                    {
+                        "value": 5,
+                        "suffix": " min",
+                        "label": "average time on the site",
+                        "was": "was 1 min"
+                    },
+                    {
+                        "value": 75,
+                        "suffix": "%",
+                        "label": "of visitors on mobile",
+                        "was": "was 15%"
+                    }
+                ]
             },
             "helpmed": {
                 "period": "2013 – 2019",
                 "company": "Helpmed / Call2Doc",
                 "role": "Frontend developer",
-                "text": "Hybrid mobile interfaces on Angular and Ionic for a telemedicine service, real-time UI on Meteor.js, and Twig/XSLT templates that turned XML and REST data into maintainable pages."
+                "text": "Patient and doctor interfaces for a telemedicine service, built on an in-house UI component library: live updates in real time, mobile apps from one codebase, and data turned into clear, maintainable screens.",
+                "stats": [
+                    {
+                        "value": 200,
+                        "suffix": "+",
+                        "label": "pages and screens built"
+                    },
+                    {
+                        "text": "UI kit",
+                        "label": "in-house component library, shared by every screen"
+                    },
+                    {
+                        "text": "iOS + Android",
+                        "label": "mobile apps from one codebase"
+                    }
+                ]
             }
         }
     },
     "skills": {
         "title": "Skills and technologies",
-        "intro": "What I work with every day, grouped the way I use it on projects.",
+        "intro": "A modern, proven stack: your project stays fast, secure and easy for the next developer to pick up.",
         "groups": {
             "core": "Frontend architecture and core",
             "ui": "UI engineering and styling",
             "data": "State and data",
             "backend": "Backend and services",
             "tooling": "Tooling and quality",
-            "ai": "AI-assisted workflow",
-            "earlier": "Earlier stack"
+            "analytics": "Analytics and e-commerce integrations",
+            "aiapps": "AI integrations",
+            "ai": "AI-assisted workflow"
         },
         "notes": {
-            "ai": "I use AI tools daily to scaffold components, refactor, write tests and review code faster. Architecture decisions stay mine, and every line is read before it ships."
-        },
-        "languagesLabel": "Languages",
-        "languages": "Czech, English, Ukrainian, Russian"
+            "aiapps": "AI built into the product itself: assistants and chat that answer from your own data, smart search, content and product-description generation, and document processing, with streaming responses, cost control and safe handling of user data.",
+            "analytics": "Conversion tracking, product feeds and a clean data layer, set up at the code level so ads and reports count every order correctly. For the Czech market that includes Seznam: Sklik, Zboží.cz and Heureka.",
+            "ai": "AI tools speed up the routine: scaffolding, refactoring, tests and review. You get results sooner and pay for fewer hours, while architecture decisions stay mine and every line is read before it ships."
+        }
     },
     "services": {
-        "title": "Development to order",
-        "intro": "I take on a small number of projects at a time, so each one gets my full attention from the first layout to launch. AI tools speed up the routine work; the details are done by hand.",
+        "title": "What I can do for you",
+        "intro": "I take on only a few projects at a time, so yours gets my full attention: you talk directly to the person who writes the code, with no handoffs between managers.",
         "stackLabel": "Typical stack",
         "items": {
             "sites": {
-                "title": "Websites and landing pages",
-                "text": "A fast, search-friendly site built from your design, or with one. Pixel-accurate layouts, content you can edit yourself, and pages that load in under a second.",
+                "title": "Websites and landing pages that sell",
+                "text": "A fast, search-friendly site from your design, or one we design together. Pages that open in under a second, content you edit yourself, and a structure Google understands from day one.",
                 "stack": "Next.js, Astro, Tailwind, headless CMS"
             },
             "apps": {
                 "title": "React web applications",
-                "text": "Dashboards, shops and internal tools with typed data from the database to the button. Authentication, forms, payments and an architecture the next developer can read.",
+                "text": "Dashboards, shops and internal tools that just work. Login, forms, payments and typed data from the database to the button, so new features don’t break old ones.",
                 "stack": "React, Next.js, TypeScript, Supabase, Zod"
             },
+            "ai": {
+                "title": "AI integrations",
+                "text": "An assistant that knows your products and documents, search that understands questions, automatic descriptions, summaries and data extraction. Built into your site or app with streaming answers, sensible costs and your data kept under control.",
+                "stack": "OpenAI, Claude, Gemini, Vercel AI SDK, RAG"
+            },
             "motion": {
-                "title": "Animation and interactive",
-                "text": "Scroll stories, product reveals and 3D scenes for brands that want visitors to stay. Motion that stays smooth on a mid-range phone and respects reduced-motion settings.",
+                "title": "Animation and 3D people remember",
+                "text": "Scroll stories, product reveals and 3D scenes that keep visitors on the page longer. Smooth on a mid-range phone and respectful of reduced-motion settings.",
                 "stack": "GSAP, Three.js, Lenis, WebGL"
             },
             "performance": {
                 "title": "Speed and technical SEO",
-                "text": "An audit of an existing site with a clear list of fixes, then the fixes themselves: Core Web Vitals, image and font loading, structured data and crawlable markup.",
-                "stack": "Lighthouse, Core Web Vitals, Schema.org"
+                "text": "Slow site, slipping in search? An audit with a clear, prioritised list of fixes, then the fixes themselves: Core Web Vitals, images and fonts, structured data, plus analytics and conversion tracking you can trust.",
+                "stack": "Lighthouse, Search Console, GA4, Tag Manager"
             }
         }
     },
     "cta": {
-        "title": "Have a project in mind?",
-        "text": "Send a few lines about what you’re building. I reply within two working days.",
-        "button": "Start a project"
+        "title": "Let’s make your site work for you",
+        "text": "Send a few lines about your project. Within two working days you get a concrete answer: approach, timeline and a price range.",
+        "button": "Discuss your project"
     },
     "work": {
         "title": "Work",
-        "intro": "Websites and applications from the last years, mostly for the watch world: independent makers, auction houses and the platforms around them.",
+        "intro": "Websites and applications from recent years, mostly for the watch world: independent makers, auction houses and the platforms around them. Real projects, live in production.",
         "visit": "Visit site",
-        "stack": "Stack",
         "empty": "Projects are loading from the CMS. Refresh in a minute, or write to me for case studies.",
         "screenshot": "Screenshot of {title}"
     },
     "contact": {
-        "title": "Start a project",
-        "intro": "Tell me what you’re building, when you need it and roughly what you can spend. The more specific, the better my first reply.",
+        "title": "Discuss your project",
+        "intro": "Tell me what you’re building, when you need it and roughly what you can spend. You get a concrete reply with an approach and a price range, not a template.",
         "direct": "Or write directly",
         "location": "Karlovy Vary, Czechia. Remote or hybrid, CET.",
         "form": {
@@ -128,6 +188,7 @@
             "types": {
                 "sites": "Website or landing page",
                 "apps": "React application",
+                "ai": "AI integration",
                 "motion": "Animation or 3D",
                 "performance": "Speed and SEO",
                 "other": "Something else"
@@ -148,7 +209,7 @@
             },
             "message": "About the project",
             "messageHint": "Goals, links to references, anything that helps.",
-            "submit": "Send request",
+            "submit": "Get a reply",
             "sending": "Sending…",
             "success": "Request sent. I’ll reply within two working days.",
             "error": "The request didn’t send. Check your connection and try again, or email info@hesrun.cz.",
@@ -162,7 +223,7 @@
     },
     "footer": {
         "rights": "Vladyslav Otroshchenko",
-        "built": "Built with Next.js, GSAP and Three.js."
+        "built": "Built with 💖 and tea"
     },
     "notFound": {
         "title": "This page doesn’t exist",

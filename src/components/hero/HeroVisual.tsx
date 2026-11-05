@@ -5,9 +5,13 @@ import { useCallback, useEffect, useState } from 'react';
 
 const CodeSymbols = dynamic(() => import('./CodeSymbols'), { ssr: false });
 
+/** Where the 3D scene runs. Phones and touch screens get FloatingGlyphs (pure CSS) instead. */
+const DESKTOP = '(min-width: 768px) and (pointer: fine)';
+
 /**
  * The 3D symbols load once the browser is idle and fade in after their first
- * frame. Without WebGL or with reduced motion only the CSS glows remain.
+ * frame, on desktop only: three.js costs phones over a second of main-thread
+ * work. Without WebGL or with reduced motion only the CSS glows remain.
  */
 export default function HeroVisual() {
     const [live, setLive] = useState(false);
@@ -15,6 +19,7 @@ export default function HeroVisual() {
 
     useEffect(() => {
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!window.matchMedia(DESKTOP).matches) return;
         const start = () => setLive(true);
         if ('requestIdleCallback' in window) {
             const id = window.requestIdleCallback(start, { timeout: 1200 });

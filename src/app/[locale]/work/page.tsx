@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import JsonLd from '@/components/layout/JsonLd';
 import StackCards from '@/components/work/StackCards';
-import { techLabel } from '@/data/tech';
 import type { Locale } from '@/i18n/routing';
 import { getWorks } from '@/lib/contentful';
 import { languageAlternates, localeUrl } from '@/lib/site';
@@ -39,7 +38,6 @@ export default async function WorkPage({ params }: PageProps<'/[locale]/work'>) 
                 url: w.url || undefined,
                 description: w.summary || undefined,
                 image: w.image?.src,
-                keywords: w.tech.map((id) => techLabel(id)).join(', '),
             },
         })),
     };
@@ -74,9 +72,6 @@ export default async function WorkPage({ params }: PageProps<'/[locale]/work'>) 
                                                 {documentToReactComponents(w.description)}
                                             </div>
                                         )}
-                                        <p className="mt-5 text-small text-paper">
-                                            {w.tech.map((id) => techLabel(id)).join(', ')}
-                                        </p>
                                         {w.url && (
                                             <a
                                                 href={w.url}

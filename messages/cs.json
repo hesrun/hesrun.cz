@@ -1,11 +1,11 @@
 {
     "meta": {
-        "homeTitle": "Vladyslav Otroshchenko — frontend vývojář (React, Next.js, GSAP)",
-        "homeDescription": "Frontend vývojář s více než 10 lety praxe. Weby, aplikace v Reactu a Next.js a animovaná rozhraní pro luxusní značky, aukční domy a rostoucí produkty.",
+        "homeTitle": "Vladyslav Otroshchenko — frontend vývojář rychlých webů a aplikací v Reactu",
+        "homeDescription": "Weby, aplikace v Reactu a Next.js a AI integrace, které se rychle načítají, dobře se umisťují ve vyhledávačích a mění návštěvníky v zákazníky. Přes 10 let praxe s luxusními značkami, aukčními domy a e-shopy.",
         "workTitle": "Projekty — Vladyslav Otroshchenko",
-        "workDescription": "Vybrané projekty: weby pro nezávislé hodináře, Ineichen Auctioneers, Artle, e-shopy a aplikace v Reactu.",
-        "contactTitle": "Poptat projekt — Vladyslav Otroshchenko",
-        "contactDescription": "Napište mi o svém webu nebo webové aplikaci. Odpovím do dvou pracovních dnů.",
+        "workDescription": "Vybrané projekty pro nezávislé hodináře, Ineichen Auctioneers, Artle a e-shopy: rychlé, vyladěné weby a aplikace v Reactu.",
+        "contactTitle": "Probrat projekt — Vladyslav Otroshchenko",
+        "contactDescription": "Napište mi o svém webu nebo webové aplikaci. Do dvou pracovních dnů dostanete konkrétní odpověď a další kroky.",
         "jobTitle": "Frontend vývojář"
     },
     "nav": {
@@ -22,9 +22,9 @@
         "close": "Zavřít menu"
     },
     "hero": {
-        "lead": "Stavím rychlé weby a aplikace v Reactu přátelské k vyhledávačům, s animacemi, u kterých lidé zůstanou.",
-        "ctaPrimary": "Poptat projekt",
-        "ctaSecondary": "Prohlédnout projekty",
+        "lead": "Weby a aplikace v Reactu, které se načtou okamžitě, najdou je ve vyhledávačích a promění návštěvníky v zákazníky. Od prvního návrhu po spuštění, bez agenturní režie.",
+        "ctaPrimary": "Probrat projekt",
+        "ctaSecondary": "Prohlédnout výsledky",
         "greeting": "Ahoj, jsem Vladyslav,",
         "rolePrefix": "",
         "accent": "frontend",
@@ -32,91 +32,151 @@
     },
     "experience": {
         "title": "Praxe",
-        "intro": "Přes deset let stavím webová rozhraní od nuly, od jednoduchých landing pages po vícestránkové aplikace. Dnes hlavně React, Next.js a TypeScript se serverovým renderováním, typovanými daty ze Supabase a Zodu a animacemi, které drží 60 FPS.",
+        "intro": "Přes 10 let stavím rozhraní od nuly, od landing pages po složité aplikace. Dnes React, Next.js a TypeScript se serverovým renderováním, spolehlivými typovanými daty a animacemi, které běží plynule v 60 FPS i na běžném telefonu.",
         "items": {
             "tehmart": {
                 "period": "2022 – dosud",
                 "company": "Tehmart a vlastní projekty",
                 "role": "Frontend vývojář, externě",
-                "text": "UI systémy a nestandardní responzivní layouty pro luxusní značky a platformy s vysokou návštěvností, mimo jiné Konstantin Chaykin a Ineichen Auctioneers. Animace a mikrointerakce v GSAP a Three.js při 60 FPS. Aplikace od nuly v Reactu, Next.js (App Router) a TypeScriptu, full-stack funkce se Supabase a Zodem."
+                "text": "Rozhraní pro luxusní značky a platformy s vysokou návštěvností, mimo jiné Konstantin Chaykin a Ineichen Auctioneers. Nestandardní responzivní layouty, animace v GSAP a Three.js, které nezadrhávají, a aplikace v Reactu a Next.js od nuly se Supabase a Zodem v zázemí.",
+                "stats": [
+                    {
+                        "value": 30,
+                        "suffix": "+",
+                        "label": "dokončených projektů"
+                    },
+                    {
+                        "value": 300,
+                        "suffix": "+",
+                        "label": "stránek převedených z designu do kódu"
+                    },
+                    {
+                        "value": 60,
+                        "suffix": " FPS",
+                        "label": "cíl každé animace, na počítači i na telefonu"
+                    }
+                ]
             },
             "stmaria": {
                 "period": "2019 – 2025",
                 "company": "stmaria.cz",
                 "role": "Frontend vývojář",
-                "text": "Přestavba frontendu běžícího e-shopu na OpenCartu: responzivní rozhraní, rychlejší mobilní stránky, čistší technické SEO a měření pro Google, Seznam a Heureku.",
-                "statTo": "400–500",
-                "statLabel": "lidí na webu současně po přestavbě, dříve 30–40. Denní objednávky vzrostly z 5–6 na 160+."
+                "text": "Přestavba frontendu běžícího e-shopu lékárny na OpenCartu bez přerušení prodeje: rozhraní navržené pro mobil, rychlejší stránky, přehlednější cesta k objednávce, technické SEO a feedy a měření pro Google, Seznam, Heureku a Zboží.cz.",
+                "stats": [
+                    {
+                        "value": 500,
+                        "label": "lidí na webu současně",
+                        "was": "dříve 20"
+                    },
+                    {
+                        "value": 160,
+                        "suffix": "+",
+                        "label": "objednávek denně",
+                        "was": "dříve 10"
+                    },
+                    {
+                        "value": 5,
+                        "suffix": " min",
+                        "label": "průměrná doba na webu",
+                        "was": "dříve 1 min"
+                    },
+                    {
+                        "value": 75,
+                        "suffix": " %",
+                        "label": "návštěvníků z mobilu",
+                        "was": "dříve 15 %"
+                    }
+                ]
             },
             "helpmed": {
                 "period": "2013 – 2019",
                 "company": "Helpmed / Call2Doc",
                 "role": "Frontend vývojář",
-                "text": "Hybridní mobilní rozhraní v Angularu a Ionicu pro telemedicínskou službu, real-time UI v Meteor.js a šablony v Twigu a XSLT, které převáděly XML a REST data na udržovatelné stránky."
+                "text": "Rozhraní pro pacienty a lékaře telemedicínské služby postavené na vlastní knihovně UI komponent: živé aktualizace v reálném čase, mobilní aplikace z jednoho kódu a data převedená do přehledných, udržovatelných obrazovek.",
+                "stats": [
+                    {
+                        "value": 200,
+                        "suffix": "+",
+                        "label": "vytvořených stránek a obrazovek"
+                    },
+                    {
+                        "text": "UI kit",
+                        "label": "vlastní knihovna komponent sdílená všemi obrazovkami"
+                    },
+                    {
+                        "text": "iOS + Android",
+                        "label": "mobilní aplikace z jednoho kódu"
+                    }
+                ]
             }
         }
     },
     "skills": {
         "title": "Dovednosti a technologie",
-        "intro": "S čím pracuji každý den, seřazené tak, jak to používám na projektech.",
+        "intro": "Moderní a ověřené technologie: váš projekt zůstane rychlý, bezpečný a další vývojář se v něm snadno vyzná.",
         "groups": {
             "core": "Frontend architektura a základ",
             "ui": "UI a styly",
             "data": "Stav a data",
             "backend": "Backend a služby",
             "tooling": "Nástroje a kvalita",
-            "ai": "Práce s AI nástroji",
-            "earlier": "Dřívější technologie"
+            "analytics": "Měření a napojení e-shopu",
+            "aiapps": "AI integrace",
+            "ai": "Práce s AI nástroji"
         },
         "notes": {
-            "ai": "AI nástroje používám denně ke generování komponent, refaktoringu, psaní testů a rychlejšímu review. Architektonická rozhodnutí dělám sám a každý řádek před nasazením čtu."
-        },
-        "languagesLabel": "Jazyky",
-        "languages": "čeština, angličtina, ukrajinština, ruština"
+            "aiapps": "AI přímo v produktu: asistenti a chat, kteří odpovídají z vašich vlastních dat, chytré vyhledávání, generování obsahu a popisů produktů a zpracování dokumentů. Se streamovanými odpověďmi, kontrolou nákladů a bezpečným zacházením s daty uživatelů.",
+            "analytics": "Měření konverzí, produktové feedy a čistý data layer nastavené přímo v kódu, aby reklamy i reporty správně započítaly každou objednávku. Pro český trh včetně Seznamu: Sklik, Zboží.cz a Heureka.",
+            "ai": "AI nástroje zrychlují rutinu: generování kódu, refaktoring, testy a review. Výsledky máte dřív a platíte méně hodin. Architektonická rozhodnutí ale dělám sám a každý řádek před nasazením čtu."
+        }
     },
     "services": {
-        "title": "Vývoj na zakázku",
-        "intro": "Beru jen několik projektů najednou, takže každý má moji plnou pozornost od prvního layoutu po spuštění. AI nástroje zrychlují rutinu, detaily dělám ručně.",
+        "title": "S čím vám pomohu",
+        "intro": "Beru jen několik projektů najednou, takže váš dostane moji plnou pozornost: komunikujete přímo s tím, kdo píše kód, bez předávání mezi manažery.",
         "stackLabel": "Obvyklé technologie",
         "items": {
             "sites": {
-                "title": "Weby a landing pages",
-                "text": "Rychlý web přátelský k vyhledávačům podle vašeho designu, nebo i s ním. Přesné layouty, obsah, který si upravíte sami, a stránky načtené za méně než sekundu.",
+                "title": "Weby a landing pages, které prodávají",
+                "text": "Rychlý web přátelský k vyhledávačům podle vašeho designu, nebo ho navrhneme spolu. Stránky načtené za méně než sekundu, obsah, který si upravíte sami, a struktura, které Google rozumí od prvního dne.",
                 "stack": "Next.js, Astro, Tailwind, headless CMS"
             },
             "apps": {
                 "title": "Webové aplikace v Reactu",
-                "text": "Dashboardy, e-shopy a interní nástroje s typovanými daty od databáze až po tlačítko. Přihlášení, formuláře, platby a architektura, které další vývojář porozumí.",
+                "text": "Dashboardy, e-shopy a interní nástroje, které prostě fungují. Přihlášení, formuláře, platby a typovaná data od databáze po tlačítko, takže nové funkce nerozbijí ty staré.",
                 "stack": "React, Next.js, TypeScript, Supabase, Zod"
             },
+            "ai": {
+                "title": "AI integrace",
+                "text": "Asistent, který zná vaše produkty a dokumenty, vyhledávání, které rozumí otázkám, automatické popisy, shrnutí a vytěžování dat. Zabudované do vašeho webu nebo aplikace se streamovanými odpověďmi, rozumnými náklady a daty pod kontrolou.",
+                "stack": "OpenAI, Claude, Gemini, Vercel AI SDK, RAG"
+            },
             "motion": {
-                "title": "Animace a interaktivita",
-                "text": "Scroll příběhy, představení produktů a 3D scény pro značky, u kterých mají návštěvníci zůstat. Animace plynulé i na běžném telefonu a s ohledem na nastavení omezeného pohybu.",
+                "title": "Animace a 3D, které si lidé zapamatují",
+                "text": "Scroll příběhy, představení produktů a 3D scény, díky kterým návštěvníci zůstanou na stránce déle. Plynulé i na běžném telefonu a s ohledem na nastavení omezeného pohybu.",
                 "stack": "GSAP, Three.js, Lenis, WebGL"
             },
             "performance": {
                 "title": "Rychlost a technické SEO",
-                "text": "Audit stávajícího webu s jasným seznamem oprav a pak samotné opravy: Core Web Vitals, načítání obrázků a fontů, strukturovaná data a čitelný kód pro vyhledávače.",
-                "stack": "Lighthouse, Core Web Vitals, Schema.org"
+                "text": "Pomalý web, který klesá ve vyhledávání? Audit s jasným seznamem oprav seřazeným podle priority a pak samotné opravy: Core Web Vitals, obrázky a fonty, strukturovaná data a k tomu měření a konverze, kterým můžete věřit.",
+                "stack": "Lighthouse, Search Console, GA4, Tag Manager"
             }
         }
     },
     "cta": {
-        "title": "Máte v hlavě projekt?",
-        "text": "Napište pár řádků o tom, co stavíte. Odpovím do dvou pracovních dnů.",
-        "button": "Poptat projekt"
+        "title": "Ať váš web pracuje pro vás",
+        "text": "Napište pár řádků o projektu. Do dvou pracovních dnů dostanete konkrétní odpověď: postup, termín a cenové rozpětí.",
+        "button": "Probrat projekt"
     },
     "work": {
         "title": "Projekty",
-        "intro": "Weby a aplikace z posledních let, hlavně ze světa hodinek: nezávislí hodináři, aukční domy a platformy kolem nich. Popisy projektů jsou v angličtině.",
+        "intro": "Weby a aplikace z posledních let, hlavně ze světa hodinek: nezávislí hodináři, aukční domy a platformy kolem nich. Skutečné projekty, které běží v provozu. Popisy projektů jsou v angličtině.",
         "visit": "Otevřít web",
-        "stack": "Technologie",
         "empty": "Projekty se načítají z CMS. Obnovte stránku za minutu, nebo mi napište o ukázky.",
         "screenshot": "Snímek obrazovky webu {title}"
     },
     "contact": {
-        "title": "Poptat projekt",
-        "intro": "Napište, co stavíte, kdy to potřebujete a přibližně jaký máte rozpočet. Čím konkrétněji, tím lepší bude moje první odpověď.",
+        "title": "Probrat projekt",
+        "intro": "Napište, co stavíte, kdy to potřebujete a přibližně jaký máte rozpočet. Dostanete konkrétní odpověď s postupem a cenovým rozpětím, žádnou šablonu.",
         "direct": "Nebo napište přímo",
         "location": "Karlovy Vary, Česko. Na dálku nebo hybridně, SEČ.",
         "form": {
@@ -128,6 +188,7 @@
             "types": {
                 "sites": "Web nebo landing page",
                 "apps": "Aplikace v Reactu",
+                "ai": "AI integrace",
                 "motion": "Animace nebo 3D",
                 "performance": "Rychlost a SEO",
                 "other": "Něco jiného"
@@ -148,7 +209,7 @@
             },
             "message": "O projektu",
             "messageHint": "Cíle, odkazy na inspiraci, cokoli, co pomůže.",
-            "submit": "Odeslat poptávku",
+            "submit": "Získat odpověď",
             "sending": "Odesílám…",
             "success": "Poptávka odeslána. Odpovím do dvou pracovních dnů.",
             "error": "Poptávku se nepodařilo odeslat. Zkontrolujte připojení a zkuste to znovu, nebo napište na info@hesrun.cz.",
@@ -162,7 +223,7 @@
     },
     "footer": {
         "rights": "Vladyslav Otroshchenko",
-        "built": "Postaveno na Next.js, GSAP a Three.js."
+        "built": "Kódováno s 💖 a čajem"
     },
     "notFound": {
         "title": "Tahle stránka neexistuje",
