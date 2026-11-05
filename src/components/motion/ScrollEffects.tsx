@@ -15,16 +15,20 @@ const MARQUEE_PX_PER_S = 45;
  * Scroll-driven motion for server-rendered sections, declared with data
  * attributes so the markup stays plain HTML for search engines:
  *
- * - `data-fx="title"`   characters (words on phones) rise out of a mask as the heading scrolls in
+ * - `data-fx="title"`   characters rise out of a mask as the heading scrolls in
  * - `data-fx="words"`   words light up one by one while the paragraph passes
  * - `data-fx="rise"`    block drifts up and fades in, tied to scroll
  * - `data-fx="marquee"` endless row drifting sideways (`data-dir="1|-1"`), faster while scrolling;
- *                       its children are identical copies, one loop = one copy
+ *                       its children are identical copies (two in the markup, more are
+ *                       cloned only if the screen is wider), one loop = one copy
  * - `data-fx="focus"`   full opacity only while near the middle of the screen
  * - `data-fx="grow"`    scales up to full size as it enters
  * - `data-count`        number counts up from 0 when it comes into view
  *
- * Nothing runs with reduced motion; content is visible by default.
+ * Phones get a lighter set: title, words, rise and grow blocks simply fade up
+ * once when they arrive (no text splitting, nothing scrubbed), and numbers
+ * show their final value. Nothing runs with reduced motion; content is
+ * visible by default.
  */
 export default function ScrollEffects({ children }: { children: React.ReactNode }) {
     const scope = useRef<HTMLDivElement>(null);
@@ -42,53 +46,28 @@ export default function ScrollEffects({ children }: { children: React.ReactNode 
                     if (!motion) return;
                     const q = gsap.utils.selector(scope);
                     const splits: SplitText[] = [];
-
-                    q('[data-fx="title"]').forEach((el: HTMLElement) => {
-                        // Phones: far fewer nodes and tweens per heading.
-                        const split = SplitText.create(el, { type: phone ? 'lines,words' : 'lines,chars', mask: 'lines' });
-                        splits.push(split);
-                        gsap.from(phone ? split.words : split.chars, {
-                            yPercent: 110,
-                            stagger: phone ? 0.05 : 0.015,
-                            ease: 'none',
-                            scrollTrigger: { trigger: el, start: 'top 92%', end: 'top 60%', scrub: 0.6 },
-                        });
-                    });
-
-                    q('[data-fx="words"]').forEach((el: HTMLElement) => {
-                        const split = SplitText.create(el, { type: 'words' });
-                        splits.push(split);
-                        gsap.fromTo(
-                            split.words,
-                            { opacity: 0.14 },
-                            {
-                                opacity: 1,
-                                stagger: 0.1,
-                                ease: 'none',
-                                scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 50%', scrub: true },
-                            },
-                        );
-                    });
-
-                    q('[data-fx="rise"]').forEach((el: HTMLElement) => {
-                        gsap.fromTo(
-                            el,
-                            { y: 90, opacity: 0 },
-                            {
-                                y: 0,
-                                opacity: 1,
-                                ease: 'none',
-                                scrollTrigger: { trigger: el, start: 'top 98%', end: 'top 62%', scrub: 0.6 },
-                            },
-                        );
-                    });
+                    const clones: Element[] = [];
+                    const cleanup = () => {
+                        splits.forEach((s) => s.revert());
+                        clones.forEach((c) => c.remove());
+                    };
 
                     q('[data-fx="marquee"]').forEach((el: HTMLElement) => {
+                        // Enough copies that the loop never shows a gap: while one copy
+                        // slides out, the others must still cover the screen.
+                        const copyWidth = (el.firstElementChild as HTMLElement | null)?.offsetWidth ?? 0;
+                        if (copyWidth > 0) {
+                            while ((el.children.length - 1) * copyWidth < window.innerWidth) {
+                                const clone = el.lastElementChild!.cloneNode(true) as Element;
+                                clone.setAttribute('aria-hidden', 'true');
+                                el.appendChild(clone);
+                                clones.push(clone);
+                            }
+                        }
                         const dir = Number(el.dataset.dir ?? 1);
-                        const copies = Math.max(1, el.children.length);
-                        const step = 100 / copies;
+                        const step = 100 / Math.max(1, el.children.length);
                         // Same pace in px for every row, whatever its length.
-                        const duration = el.scrollWidth / copies / MARQUEE_PX_PER_S;
+                        const duration = Math.max(1, copyWidth) / MARQUEE_PX_PER_S;
                         const loop = gsap.fromTo(
                             el,
                             { xPercent: dir > 0 ? -step : 0 },
@@ -122,6 +101,61 @@ export default function ScrollEffects({ children }: { children: React.ReactNode 
                         });
                     });
 
+                    if (phone) {
+                        // One cheap reveal per block, played once; text stays whole, numbers stay final.
+                        q('[data-fx="title"], [data-fx="words"], [data-fx="rise"], [data-fx="grow"]').forEach(
+                            (el: HTMLElement) => {
+                                gsap.from(el, {
+                                    y: 32,
+                                    opacity: 0,
+                                    duration: 0.8,
+                                    ease: 'power2.out',
+                                    scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+                                });
+                            },
+                        );
+                        return cleanup;
+                    }
+
+                    q('[data-fx="title"]').forEach((el: HTMLElement) => {
+                        const split = SplitText.create(el, { type: 'lines,chars', mask: 'lines' });
+                        splits.push(split);
+                        gsap.from(split.chars, {
+                            yPercent: 110,
+                            stagger: 0.015,
+                            ease: 'none',
+                            scrollTrigger: { trigger: el, start: 'top 92%', end: 'top 60%', scrub: 0.6 },
+                        });
+                    });
+
+                    q('[data-fx="words"]').forEach((el: HTMLElement) => {
+                        const split = SplitText.create(el, { type: 'words' });
+                        splits.push(split);
+                        gsap.fromTo(
+                            split.words,
+                            { opacity: 0.14 },
+                            {
+                                opacity: 1,
+                                stagger: 0.1,
+                                ease: 'none',
+                                scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 50%', scrub: true },
+                            },
+                        );
+                    });
+
+                    q('[data-fx="rise"]').forEach((el: HTMLElement) => {
+                        gsap.fromTo(
+                            el,
+                            { y: 90, opacity: 0 },
+                            {
+                                y: 0,
+                                opacity: 1,
+                                ease: 'none',
+                                scrollTrigger: { trigger: el, start: 'top 98%', end: 'top 62%', scrub: 0.6 },
+                            },
+                        );
+                    });
+
                     q('[data-fx="grow"]').forEach((el: HTMLElement) => {
                         gsap.fromTo(
                             el,
@@ -148,7 +182,7 @@ export default function ScrollEffects({ children }: { children: React.ReactNode 
                         });
                     });
 
-                    return () => splits.forEach((s) => s.revert());
+                    return cleanup;
                 },
             );
 

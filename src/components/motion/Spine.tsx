@@ -8,6 +8,9 @@ import { useEffect, useRef, useState } from 'react';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, DrawSVGPlugin);
 
+/** Below this width the line is not shown (matches the 48rem breakpoint of .spine-indent). */
+const PHONE = '(max-width: 47.99rem)';
+
 type Geometry = {
     w: number;
     h: number;
@@ -35,6 +38,9 @@ export default function Spine({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         const el = root.current;
         if (!el) return;
+        // Phones: no line at all, so nothing to measure or animate.
+        const phone = window.matchMedia(PHONE);
+        let ro: ResizeObserver | null = null;
         const measure = () => {
             const box = el.getBoundingClientRect();
             const anchor = el.querySelector<HTMLElement>('[data-spine-x]');
@@ -61,11 +67,24 @@ export default function Spine({ children }: { children: React.ReactNode }) {
                     : { w, h, top, line, bottom, topY, firstY, lineEndY, bottomY, dots },
             );
         };
-        measure();
-        const ro = new ResizeObserver(measure);
-        ro.observe(el);
-        document.fonts?.ready.then(measure);
-        return () => ro.disconnect();
+        const sync = () => {
+            ro?.disconnect();
+            ro = null;
+            if (phone.matches) {
+                setGeo(null);
+                return;
+            }
+            measure();
+            ro = new ResizeObserver(measure);
+            ro.observe(el);
+            document.fonts?.ready.then(() => !phone.matches && measure());
+        };
+        sync();
+        phone.addEventListener('change', sync);
+        return () => {
+            ro?.disconnect();
+            phone.removeEventListener('change', sync);
+        };
     }, []);
 
     useGSAP(

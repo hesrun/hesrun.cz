@@ -97,9 +97,9 @@
         font-size: clamp(2rem, 1.2rem + 3vw, var(--text-h2));
     }
 
-    /* Content to the right of the spine line. */
+    /* Content to the right of the spine line (phones have no line, so no indent). */
     .spine-indent {
-        padding-left: 2.25rem;
+        padding-left: 0;
     }
     @media (min-width: 48rem) {
         .spine-indent {

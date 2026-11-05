@@ -59,10 +59,8 @@ export default async function Skills() {
                                 data-dir={i % 2 === 0 ? 1 : -1}
                                 className="flex w-max text-[clamp(1.9rem,5vw,4.5rem)] font-medium leading-none tracking-[-0.02em]"
                             >
-                                {/* Four copies so the loop never shows a gap, even on wide screens. */}
+                                {/* Two copies in the markup; ScrollEffects clones more only when the screen needs them. */}
                                 <Row items={group.items} />
-                                <Row items={group.items} hidden />
-                                <Row items={group.items} hidden />
                                 <Row items={group.items} hidden />
                             </div>
                             {group.note && (
