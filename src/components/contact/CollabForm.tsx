@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useId, useState } from 'react';
 import { z } from 'zod';
 
-const TYPES = ['sites', 'apps', 'motion', 'performance', 'other'] as const;
+const TYPES = ['sites', 'apps', 'ai', 'motion', 'performance', 'other'] as const;
 const BUDGETS = ['s', 'm', 'l', 'xl', 'unsure'] as const;
 const TIMELINES = ['asap', 'quarter', 'later'] as const;
 const MIN_MESSAGE = 30;

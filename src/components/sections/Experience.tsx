@@ -2,6 +2,34 @@ import { getTranslations } from 'next-intl/server';
 
 const ITEMS = ['tehmart', 'stmaria', 'helpmed'] as const;
 
+/**
+ * One result in messages (experience.items.*.stats). A numeric `value` counts
+ * up on scroll; `text` is shown as is for results that are not a number.
+ */
+type Stat = { value?: number; text?: string; prefix?: string; suffix?: string; label: string; was?: string };
+
+function Stats({ stats }: { stats: Stat[] }) {
+    return (
+        <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-8 lg:grid-cols-4">
+            {stats.map((s) => (
+                // Long text results (e.g. "iOS + Android") take two columns to stay on one line.
+                <div key={s.label} className={`flex flex-col gap-2 ${(s.text?.length ?? 0) > 8 ? 'col-span-2' : ''}`}>
+                    <dt className="sr-only">{s.label}</dt>
+                    <dd className="display num whitespace-nowrap text-[clamp(2.25rem,4.5vw,3.75rem)] leading-none text-accent">
+                        {s.prefix}
+                        {s.value !== undefined ? <span data-count={s.value}>{s.value}</span> : s.text}
+                        {s.suffix}
+                    </dd>
+                    <dd className="max-w-[16rem] text-small leading-snug text-mist" aria-hidden="true">
+                        {s.label}
+                        {s.was && <span className="mt-1 block text-paper/60">{s.was}</span>}
+                    </dd>
+                </div>
+            ))}
+        </dl>
+    );
+}
+
 export default async function Experience() {
     const t = await getTranslations('experience');
 
@@ -36,16 +64,7 @@ export default async function Experience() {
                                     </h3>
                                     <p className="mt-1 text-mist">{t(`items.${key}.role`)}</p>
                                     <p className="prose-measure mt-5">{t(`items.${key}.text`)}</p>
-                                    {key === 'stmaria' && (
-                                        <div className="mt-10 flex flex-col gap-2">
-                                            <p className="display num text-[clamp(3rem,7vw,6rem)] leading-none text-accent">
-                                                <span data-count="400">400</span>–<span data-count="500">500</span>
-                                            </p>
-                                            <p className="max-w-[26rem] text-small leading-snug text-mist">
-                                                {t('items.stmaria.statLabel')}
-                                            </p>
-                                        </div>
-                                    )}
+                                    <Stats stats={t.raw(`items.${key}.stats`) as Stat[]} />
                                 </div>
                             </li>
                         ))}

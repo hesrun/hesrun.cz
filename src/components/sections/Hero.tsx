@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import FloatingGlyphs from '@/components/hero/FloatingGlyphs';
 import HeroIntro from '@/components/hero/HeroIntro';
 import HeroVisual from '@/components/hero/HeroVisual';
 import { Link } from '@/i18n/navigation';
@@ -18,6 +19,7 @@ export default async function Hero() {
                 </p>
             </div>
             <div className="absolute inset-0 -z-10">
+                <FloatingGlyphs />
                 <HeroVisual />
             </div>
 

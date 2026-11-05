@@ -176,6 +176,42 @@
     pointer-events: none;
 }
 
+/* Phones and touch screens: flat floating glyphs instead of the 3D scene (see HeroVisual). */
+.hero-particles {
+    display: none;
+}
+.particle {
+    position: absolute;
+    translate: -50% -50%;
+    opacity: 0;
+    will-change: transform;
+    animation:
+        particle-in 0.9s ease-out forwards,
+        particle-float var(--t) ease-in-out infinite alternate;
+}
+@keyframes particle-in {
+    to {
+        opacity: var(--o);
+    }
+}
+@keyframes particle-float {
+    from {
+        transform: translate3d(0, 0, 0) rotate(var(--r));
+    }
+    to {
+        transform: translate3d(var(--dx), var(--dy), 0) rotate(calc(var(--r) + 14deg));
+    }
+}
+@media (max-width: 767px), (pointer: coarse) {
+    .hero-particles {
+        display: block;
+    }
+    /* The radial gradient is soft enough; a big blur is costly for phone GPUs. */
+    .glow {
+        filter: none;
+    }
+}
+
 /* Giant, barely visible word behind the hero. */
 .ghost-word {
     font-stretch: 125%;
@@ -213,6 +249,9 @@ html.lenis body {
     *::after {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+    }
+    .particle {
+        animation: particle-in 0.01ms forwards;
     }
 }
 

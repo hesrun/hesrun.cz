@@ -45,7 +45,7 @@ export default function HeroIntro({ children }: { children: React.ReactNode }) {
                 ease: 'none',
                 scrollTrigger: { trigger: section, start: 'top top', end: 'bottom 20%', scrub: true },
             });
-            gsap.to(section?.querySelector('.hero-ghost') ?? [], {
+            gsap.to(section?.querySelectorAll('.hero-ghost, .hero-particles') ?? [], {
                 yPercent: 40,
                 ease: 'none',
                 scrollTrigger: { trigger: section, start: 'top top', end: 'bottom top', scrub: true },

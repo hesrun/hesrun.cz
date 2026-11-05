@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { BsEnvelope, BsGithub, BsLinkedin } from 'react-icons/bs';
 import CollabForm from '@/components/contact/CollabForm';
+import { Envelope, GitHub, LinkedIn } from '@/components/icons/social';
 import type { Locale } from '@/i18n/routing';
 import { PERSON, languageAlternates, localeUrl } from '@/lib/site';
 
@@ -26,9 +26,9 @@ export default async function ContactPage({ params }: PageProps<'/[locale]/conta
     const t = await getTranslations({ locale, namespace: 'contact' });
 
     const links = [
-        { href: `mailto:${PERSON.email}`, label: PERSON.email, icon: BsEnvelope },
-        { href: PERSON.linkedin, label: 'LinkedIn', icon: BsLinkedin },
-        { href: PERSON.github, label: 'GitHub', icon: BsGithub },
+        { href: `mailto:${PERSON.email}`, label: PERSON.email, icon: Envelope },
+        { href: PERSON.linkedin, label: 'LinkedIn', icon: LinkedIn },
+        { href: PERSON.github, label: 'GitHub', icon: GitHub },
     ];
 
     return (
@@ -46,7 +46,7 @@ export default async function ContactPage({ params }: PageProps<'/[locale]/conta
                                 {...(href.startsWith('http') ? { target: '_blank', rel: 'me noopener' } : {})}
                                 className="inline-flex items-center gap-3 text-lead transition-colors hover:text-accent"
                             >
-                                <Icon aria-hidden="true" className="size-4 text-accent" />
+                                <Icon className="size-4 text-accent" />
                                 {label}
                             </a>
                         </li>
