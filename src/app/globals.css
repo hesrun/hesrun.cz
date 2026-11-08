@@ -270,3 +270,66 @@ html.lenis body {
 .spine-dot.is-on {
     fill: var(--color-accent);
 }
+
+/* Hand cursor (HandCursor.tsx): middle finger up, index finger over links. */
+html.hand-cursor,
+html.hand-cursor * {
+    cursor: none !important;
+}
+html.hand-cursor :is(input:not([type='submit'], [type='button'], [type='checkbox'], [type='radio']), textarea, [contenteditable='true']) {
+    cursor: text !important;
+}
+.hand {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2147483647;
+    pointer-events: none;
+}
+.hand-cursor .hand {
+    display: block;
+}
+.hand[data-hidden='true'] {
+    opacity: 0;
+}
+.hand svg {
+    display: block;
+    overflow: visible;
+    fill: var(--color-ink);
+    stroke: var(--color-accent);
+    stroke-width: 1.6;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    filter: drop-shadow(0 2px 3px rgb(0 0 0 / 0.75));
+    /* Hotspot: the tip of the middle finger. */
+    transform: translate(-16.5px, -2px);
+    transform-origin: 16.5px 2px;
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.hand-palm {
+    stroke: none;
+}
+.hand-outline {
+    fill: none;
+}
+.hand-finger {
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.hand-index {
+    transform: translateY(12px);
+}
+.hand[data-point='true'] svg {
+    /* Hotspot moves to the tip of the index finger. */
+    transform: translate(-11.5px, -2px);
+    transform-origin: 11.5px 2px;
+}
+.hand[data-point='true'] .hand-index {
+    transform: none;
+}
+.hand[data-point='true'] .hand-middle {
+    transform: translateY(12px);
+}
+.hand[data-down='true'] svg {
+    scale: 0.88;
+}

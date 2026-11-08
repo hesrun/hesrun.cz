@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import JsonLd from '@/components/layout/JsonLd';
+import HandCursor from '@/components/motion/HandCursor';
 import PageTransition from '@/components/motion/PageTransition';
 import SmoothScroll from '@/components/motion/SmoothScroll';
 import { routing } from '@/i18n/routing';
@@ -116,6 +117,7 @@ export default async function LocaleLayout({
                     <SmoothScroll />
                     <PageTransition />
                 </NextIntlClientProvider>
+                <HandCursor />
                 <JsonLd data={person} />
             </body>
         </html>
