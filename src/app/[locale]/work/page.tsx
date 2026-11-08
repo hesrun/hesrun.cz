@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import JsonLd from '@/components/layout/JsonLd';
-import StackCards from '@/components/work/StackCards';
+import ScrollEffects from '@/components/motion/ScrollEffects';
 import type { Locale } from '@/i18n/routing';
 import { getWorks } from '@/lib/contentful';
 import { languageAlternates, localeUrl } from '@/lib/site';
@@ -52,14 +52,11 @@ export default async function WorkPage({ params }: PageProps<'/[locale]/work'>) 
             {works.length === 0 ? (
                 <p className="wrap pb-32 text-lead text-mist">{t('empty')}</p>
             ) : (
-                    <StackCards className="wrap pb-[30vh]">
+                <ScrollEffects>
+                    <ol className="wrap flex flex-col gap-8 pb-32 md:gap-12 md:pb-40">
                         {works.map((w, i) => (
-                            <li
-                                key={w.id}
-                                id={w.slug}
-                                className="stack-item sticky top-[10rem] mb-[12vh] scroll-mt-40 last:mb-0"
-                            >
-                                <article className="stack-card relative grid origin-top will-change-transform overflow-hidden rounded-[1.75rem] border border-line bg-ink-2 md:h-[min(calc(100svh-13rem),40rem)] md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+                            <li key={w.id} id={w.slug} data-fx="rise" className="scroll-mt-32">
+                                <article className="grid overflow-hidden rounded-[1.75rem] border border-line bg-ink-2 md:h-[min(calc(100svh-13rem),40rem)] md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
                                     <div className="flex flex-col p-6 sm:p-8 md:p-12">
                                         <p className="num text-small text-accent">
                                             {String(i + 1).padStart(2, '0')} / {String(works.length).padStart(2, '0')}
@@ -84,7 +81,7 @@ export default async function WorkPage({ params }: PageProps<'/[locale]/work'>) 
                                             </a>
                                         )}
                                     </div>
-                                    <div className="stack-media relative -order-1 aspect-[16/10] overflow-hidden md:order-none md:aspect-auto md:h-full">
+                                    <div className="relative -order-1 aspect-[16/10] overflow-hidden md:order-none md:aspect-auto md:h-full">
                                         {w.image && (
                                             <Image
                                                 src={w.image.src}
@@ -96,11 +93,11 @@ export default async function WorkPage({ params }: PageProps<'/[locale]/work'>) 
                                             />
                                         )}
                                     </div>
-                                    <div aria-hidden="true" className="stack-shade pointer-events-none absolute inset-0 bg-black opacity-0" />
                                 </article>
                             </li>
                         ))}
-                    </StackCards>
+                    </ol>
+                </ScrollEffects>
             )}
             <JsonLd data={list} />
         </>
